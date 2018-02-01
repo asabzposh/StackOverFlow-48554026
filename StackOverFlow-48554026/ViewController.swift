@@ -14,7 +14,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let item = UIBarButtonItem(title: "Share", style: .plain, target: self, action: #selector(buttonPressed))
+        // 1. Solution A
+//        let item = UIBarButtonItem(title: "Share", style: .plain, target: self, action: #selector(buttonPressed))
+        
+        // 2. Solution B
+        let button = ShareButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        let item = UIBarButtonItem()
+        item.customView = button
+        
+        // 3. Finally Add barbutton item
         self.navigationItem.rightBarButtonItem = item
     }
 
